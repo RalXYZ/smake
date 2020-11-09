@@ -1,7 +1,6 @@
-# smake (*S*imple *make*)
+# smake (Simple make)
 
 Notice: This is a homework assigned by [QSCtech](https://github.com/QSCTech).  
-Although most of the features have been implemented, **this project is still UNDER DEVELOPMENT**, which means some of the activities defined by this documentation might not have been implemented correctly.  
 The documentation below is written by [@dinoallo](https://github.com/dinoallo).  
 
 [`make`](https://en.wikipedia.org/wiki/Make_(software)) is a common utility loved by many programmer. But newbies often get intimidated by the syntax of `Makefile`.  
@@ -86,7 +85,6 @@ $~ smake clean
 smake: Do you want to remove the binary file? (y/N)N
 smake: Nothing to be done here, exiting...
 ```
-Your script may not remove files other than `.o` and the binary.  
 #### `smake help`
 ##### Usage
 ```sh
