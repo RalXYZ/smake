@@ -95,7 +95,7 @@ case "$argv_1" in
 			`ls *.o > /dev/null`
 			if [ $? -ne 0 ]
 			then
-				echo "smake: No file needs to be cleaned."
+				echo "smake: No object file needs to be cleaned."
 			else 
 				for clean_file in `ls *.o`
 				do
@@ -110,7 +110,7 @@ case "$argv_1" in
 			read clean_file_selection
 			case "$clean_file_selection" in
 				"y" | "Y")
-					echo "smake: Enter the name of your binary file(s):\c"
+					echo "smake: Enter the name of your binary file(s): \c"
 					read clean_file_list
 					clean_succeeded=0
 					clean_failed=0
@@ -129,6 +129,7 @@ case "$argv_1" in
 					exit 0
 					;;
 				"n" | "N" | "")
+					echo "smake: No binary file needs to be cleand."
 					exit 0
 					;;
 				*)
@@ -143,22 +144,22 @@ case "$argv_1" in
 	*)
 		if [ $argc -eq 0 ]
 		then
-			echo "smake: Needs command."
+			echo "smake: Requires command."
 		else
-			echo "smake: Invalid command: $argv_1"
+			echo "smake: Invalid command '$argv_1'"
 		fi
 esac
 
 
-echo "smake usage:"
-		echo "smake init"
-		echo "smake compile"
-		echo "smake install DESTINATION INSTALLFILELIST"
-		echo "smake clean"
-		echo "smake help"
-		if [ "$argv_1" = help ] && [ $argc -eq 1 ]
-		then
-			exit 0
-		else
-			exit 127
-		fi
+echo "The usage of smake is listed below:"
+echo "smake init"
+echo "smake compile"
+echo "smake install DESTINATION INSTALLFILELIST"
+echo "smake clean"
+echo "smake help"
+if [ "$argv_1" = help ] && [ $argc -eq 1 ]
+then
+	exit 0
+else
+	exit 127
+fi
